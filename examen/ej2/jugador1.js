@@ -1,12 +1,12 @@
 function jugador1() {
     var Player = function () {
-        this.victoria = ''
-        this.derrota = ''
-        this.empate = ''
-        function mostrarDatos() {
-            prompt('El usuario tiene: '+this.victoria+'victorias'+this.derrota+' derrotas '+this.empate+' empates')
+        this.victoria = 0
+        this.derrota = 0
+        this.empate = 0
+        this.mostrarDatos = function () {
+            salida('J1 tiene: ' + this.victoria + ' victorias ' + this.derrota + ' derrotas ' + this.empate + ' empates')
         }
-        function sumarDatos(victoria, derrota, empate) {
+        this.sumarDatos = function (victoria, derrota, empate) {
             this.victoria = this.victoria + victoria
             this.derrota = this.derrota + derrota
             this.empate = this.empate + empate
@@ -16,6 +16,6 @@ function jugador1() {
      * Almacena el perfil.
      * @type {object}
      */
-    jugador1 = new Player()
+    var jugador1 = new Player()
     return jugador1
 }
